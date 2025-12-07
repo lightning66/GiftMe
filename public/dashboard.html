@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftMe - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div style="flex: 1;">
+                <h1 style="margin: 0 0 5px 0;">My Dashboard</h1>
+                <p id="welcome" class="subtitle" style="margin: 0;"></p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div id="userProfile" style="display: flex; align-items: center; gap: 10px;">
+                    <img id="userPhoto" src="" alt="User Photo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                    <span id="userName" style="font-size: 14px; color: #333;"></span>
+                </div>
+                <button id="signOut" style="padding:8px 12px;border-radius:6px;border:none;background:#e53e3e;color:#fff;cursor:pointer">Sign out</button>
+            </div>
+        </div>
+
+        <div id="addItem" style="margin: 20px 0; border: 1px solid #ddd; padding: 15px; border-radius: 5px; background: #f9f9f9;">
+            <div style="margin-bottom: 10px;">
+                <label style="display: block; margin-bottom: 5px; font-weight: bold;">Product Link:</label>
+                <input id="itemLink" type="url" placeholder="Paste product link here" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;">
+            </div>
+            <div style="display: flex; gap: 15px; margin-bottom: 10px;">
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 14px; color: #666;">Current Price (optional):</label>
+                    <input id="itemPrice" type="number" placeholder="e.g., 60.99" step="0.01" min="0" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 14px; color: #666;">Original Price (optional):</label>
+                    <input id="itemOriginal" type="number" placeholder="e.g., 1699" step="0.01" min="0" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="flex: 1;">
+                    <label style="display: block; margin-bottom: 5px; font-size: 14px; color: #666;">Savings (optional):</label>
+                    <input id="itemSavings" type="number" placeholder="e.g., 900" step="0.01" min="0" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+            </div>
+            <button id="addItemBtn" style="padding: 10px 15px; border: none; background: #4caf50; color: white; border-radius: 5px; cursor: pointer; width: 100%;">Add Item</button>
+        </div>
+
+        <div id="itemsList" style="margin-top: 30px;">
+            <h2>Your Items</h2>
+            <div id="itemsContainer" style="display: flex; flex-wrap: wrap; gap: 20px;"></div>
+        </div>
+    </div>
+    <footer style="text-align: left; padding: 20px; color: #999; font-size: 14px; position: fixed; bottom: 0; left: 0;">
+        © 2025 All rights reserved.
+    </footer>
+    <script src="dashboard.js?v=1.0"></script>
+</body>
+</html>

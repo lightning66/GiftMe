@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftMe - Callback</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <h1>Processing your login...</h1>
+        <p>Please wait while we redirect you to your dashboard.</p>
+    </div>
+
+    <script>
+        // This page handles the Google OAuth callback
+        // The Google Sign-In library will handle the callback flow
+        // and redirect to the dashboard if successful
+        
+        window.onload = function() {
+            // Check if user is already authenticated
+            const userToken = sessionStorage.getItem("userToken");
+            const currentUser = sessionStorage.getItem("currentUser");
+            
+            if (userToken && currentUser) {
+                // User is authenticated, redirect to dashboard
+                window.location.href = "/dashboard.html";
+            } else {
+                // No authentication, redirect back to home
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 2000);
+            }
+        };
+    </script>
+</body>
+</html>
